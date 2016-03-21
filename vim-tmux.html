@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+            @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+            @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+        </style>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <textarea id="source">
+
+            class: middle, center
+            # `:e vim-tmux-talk.md`
+            ---
+            ### Florenz?
+            .left[![@track02](images/avatar.jpeg)]
+            * Florenz Heldermann
+            * Frontend Developer
+            * bei [hmmh.de](http://hmmh.de)
+            * bei [flore.nz](http://flore.nz)
+            * Twitter: [@track02](http://twitter.com/track02)
+
+            ???
+            Sehr nett dass ihr nicht den Apple Livestream guckt
+
+            --
+            * Podcast: [Gefährliches Halbwissen](http://halbwissen.co)
+            ---
+            background-image: url(images/retro-80s.jpg)
+            class: middle, center, cover, bg-head-white
+
+            # Vim, Tmux, Ftw
+
+            ---
+            .image-centered[![@iamdevloper](images/devloper.png)]
+            ---
+            background-image: url(images/retro-80s.jpg)
+            class: middle, center, cover, bg-head-white
+            ## Oder: "Oh nein, jetzt hat sich Vim geöffnet, wie schliesse ich den Mist denn jetzt wieder?jjkk:wq"
+
+            ???
+            Vortrag ist Englisch!!!
+            Wer ist Entwickler?
+            Apple Livestream
+            Wer kennt Vim?
+            Wer nutzt vim?
+            Wer hasst vim?
+            ---
+            .image-centered[![@iamdevloper](images/devloper3.png)]
+            ---
+            .image-centered[![Phase 5](images/phase5.png)]
+            ---
+            .image-centered[![Frontpage](images/frontpage.jpg)]
+            ---
+            .image-centered[![Dreamweaver](images/dreamweaver.png)]
+            ---
+            .image-centered[![sublime text 2](images/stlogo.png)]
+            ---
+            .image-centered[![VIM](images/vimlogo.png)]
+
+            ---
+            .image-centered[![Vim Basic](images/vim-basic.png)]
+            ---
+            .image-centered[![Vim Basic](images/vim-pimp.png)]
+            ---
+            ### What is Vim?
+            > Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.
+            > &mdash; <cite><a href="http://www.vim.org/about.php">vim.org</a></cite>
+
+            --
+
+            * Modal editor
+            * Based on vi
+            * *Vi* fork by Bram Moolenaar
+            * First release in 1991 as **V**i **Im**itation for Amiga systems
+            * Since 1993: **V**i **Im**proved
+            * Usable in the command line and standalone (gVim)
+            ---
+            ### Why?
+            * Available almost everywhere
+            * Preinstalled on almost every *nix operating systems
+            * Heavy focus on keyboard input
+            --
+
+            * Sorry Windows, try gVim or [CMDer](http://cmder.net/)
+            ---
+
+            class: middle, center
+            # No, seriously... Why?
+
+            ---
+            class: middle, center, cover, bg-head-white
+            background-image: url(images/tennis.gif)
+
+            # Hint
+
+            ---
+            .image-centered[![Tennisarm](images/tennisarm-bandage.jpg)]
+
+            ???
+            Schmerzen im Ellenbogen
+
+            "Kannst ja Linkshaender werden"
+            ---
+            class: middle, center
+            # Learning Curve
+
+            ---
+            .image-centered[![Quelle: https://pascalprecht.github.io/2014/03/18/why-i-use-vim/](images/learningcurve.jpg)]
+            .figcaption[Source: [http://pascalprecht.github.io](https://pascalprecht.github.io/2014/03/18/why-i-use-vim/)]
+
+            ???
+            Eine Wand
+            Irgendwann wird es ploetzlich gut
+
+            ---
+            ### Learning Curve
+            > Vim isn't an editor designed to hold its users' hands. It is a tool, the use of which must be learned. <br>
+            > &mdash; <cite>actual quote from <a href="http://www.vim.org/about.php">vim.org</a></cite>
+
+            --
+
+            * Modal behaviour
+
+            --
+            * Shortcuts
+
+            --
+            * Compositions
+
+            --
+            * Even more shortcuts
+
+            --
+            * Plugins
+
+            --
+            * Did I mention shortcuts?
+
+            ---
+            class: middle, center
+
+            # The ultimative
+            ## "Shit, somehow I entered vim - WTF, no - I just want to leave - $#@@% this S$@t"
+            # Survival Guide
+
+            ---
+
+            ### Survival Guide / Cheatsheet
+            * Press `i` to insert text
+            * Hit `Esc` after you're done with inserting
+            * Type `:w` to save your file
+            * Finally press `:q` to quit vim forever
+
+            ---
+            class: middle, center
+
+            # type `vimtutor`
+            ---
+
+            .image-centered[![Vimtutor](images/vimtutor.png)]
+            .figcaption[Vimtutor: Interactive Tutorial in vim]
+            ---
+            ### Vim Modes
+            Vim has different modes (or function layers) for different work
+
+            ???
+            Modal Editor
+
+            --
+            * **Insert:** Insert text
+            * **Normal:** Magic, Dragons and stuff
+            * **Visual:** Mark and highlight text
+            * **Command:** Commands
+
+            --
+            * **Ex:** ????
+
+            ---
+            class: middle, center
+
+            # Insert Mode
+
+            ---
+            .image-centered[![Troy McClure](images/insertmode.jpg)]
+            ---
+            class: middle, center
+
+            # `I` `i` `a` `O` `o` `A`
+
+            ---
+            ### Insert Mode
+            * `i` - insert
+            * `I` - insert at beginning of current line
+            * `a` - insert after word
+            * `O` - insert above current line
+            * `o` - insert below current line
+            * `A` - insert at end of current line
+            * Depends on cursor position
+            ---
+            class: middle, center
+
+            # `:help inserting`
+
+            ---
+            class: middle, center
+
+            # TL;DR
+
+            ---
+            ### How to use insert mode:
+            * Step 1: Insert text
+            ---
+            ### How to use insert mode:
+            * Step 1: Insert text
+            * Step 2: GTFO
+            ---
+            class: middle, center
+
+            # Normal Mode
+
+            ---
+            class: middle, center
+
+            # Most of the time you are *editing* text, not *inserting*
+
+            ---
+            class: middle, center
+
+            # *Edit*or.
+            ---
+            class: middle, center
+
+            # Not *Insert*or.
+
+            ---
+            background-image: url(images/suprise.gif)
+            class: cover
+
+            ---
+            class: middle, center
+
+            # TL;DR
+
+            ---
+            .image-centered[![](images/insert-normal-1.png)]
+            ---
+            .image-centered[![](images/insert-normal-2.png)]
+            ---
+            .image-centered[![](images/insert-normal-3.png)]
+            ---
+            .image-centered[![](images/insert-normal-4.png)]
+
+            ---
+            class: middle, center
+
+            # Motions
+            ---
+            class: middle, center
+
+            # Say goodbye to some friends
+
+            ---
+            class: middle, center
+
+            # Mouse?
+            ---
+            class: middle, center
+            <video controls poster="images/mouse-trash.png" src="movies/mouse-trash.webm"></video>
+            ---
+            class: middle, center
+
+            # Arrow Keys?
+
+            ---
+            class: middle, center
+
+            .image-centered[![](images/sad-arrow.gif)]
+
+            ---
+            class: middle, center
+
+            # hjkl
+            ---
+            class: middle, center
+
+            .image-centered[![](images/adm-3a.jpg)]
+            .figcaption[Lear Sieger ADM-3A(1974) Quelle:[Wikipedia](https://en.wikipedia.org/wiki/ADM-3A)]
+            ---
+            class: middle, center
+
+            # Stay on the Home Row
+            ---
+            ### Motions
+            * `h`  `j`  `k`  `l` : Arrow keys
+            * `gg` `G`: Top or bottom of document
+            * `H` `M` `L`: Top, middle or bottom of current screen
+            * `0` `_`  `$`: Beginning, first non-blank character, end of current line
+            * `w`: First letter of next word
+            * `e`: Last letter of next word
+            * `b`: First letter of previous word
+            * `f{char}` `t{char}`: Find next occurrence of letter
+
+            --
+            * And many more
+
+            ---
+
+            class: middle, center
+
+            #`:help cursor-motions`
+
+            ---
+
+            ### Commands
+            * `y`/ `yy` - Yank / Yank line <br>(*yank* means *copy*)
+            * `d` / `dd` - Delete / Delete line <br>(similar to *cut*)
+            * `p` - Paste
+            * `c` - Change
+
+            ---
+            .image-centered[![Quelle:http://www.viemu.com/vi-vim-cheat-sheet.gi](images/vi-vim-cheat-sheet.gif)]
+            ---
+            class: middle, center
+
+            # Compositions
+            ---
+            class: middle, center
+
+            # `daw`
+            --
+
+            ## Delete A Word
+
+            ???
+            Command + Motion / Textobject
+            ---
+            class: middle, center
+
+            # Text Objects
+            ---
+            ### Text Objects
+            * `w` - Word
+            * `s` - Sentence
+            * `p` - Paragraph
+            * `t` - Tag
+            ---
+            ### Motions
+            * `a` - Around / All
+            * `i` - In
+            * `t` - 'til
+            * `f` - Find forward
+            * `F` - Find backward
+            ---
+            ### Text Objects
+            * `aw` - Around Word
+            * `iw` - Inner Word
+            * `as` - Around Sentence
+            * `is` - Inner Sentence
+            * `ap` - Around Paragraph
+            * `ip` - Inner Paragraph
+            * `at` - Around Tag
+            * `it` - Inner Tag
+
+            ---
+            class: middle, center
+            <video controls src="movies/diw-daw.webm"></video>
+            ---
+            class: middle, center
+
+            # [COMMAND] [MOTION or TEXT OBJECT]
+            ---
+            class: middle, center
+
+            # `daw`
+            --
+
+            ## Delete a word
+            ---
+            class: middle, center
+
+            # `cl`
+            --
+
+            ## Change letter
+            ---
+            class: middle, center
+
+            # `y$`
+            --
+
+            ## Copy till end of line
+            ---
+            class: middle, center
+
+            # `di"`
+            --
+
+            ## Delete in ""
+            ---
+            class: middle, center
+            # `gUe`
+            --
+
+            ## Go uppercase to the end of the current word
+            ---
+            class: middle, center
+
+            # `d2fn`
+            --
+
+            ## Delete till you encounter a second time the letter n
+            ---
+            class: middle, center
+
+            # `2yy10p`
+            --
+
+            ## Yank 2 lines, paste it 10 times
+            ---
+            class: middle, center
+
+            # `.`
+            --
+
+            ## Repeat the last command
+            ---
+            background-image: url(images/hanks-typing.gif)
+            class: cover
+
+            ---
+            class: middle, center
+
+            # Muscle Memory!
+            ---
+            class: middle, center
+
+            # Repeat. Repeat. Repeat.
+            ## Eventually you stop thinking about it.
+            ## Then repeat again
+            ---
+            class: middle, center
+
+            # type `vimtutor`
+            ---
+            .image-centered[![](images/vimadventures.png)]
+            ---
+            <video controls loop src="movies/vimadventures.webm"></video>
+            ---
+            background-image: url(images/cool-typing.gif)
+            class: cover
+
+            ---
+            class: middle, center
+
+            # Macros
+            ---
+            ### Record Macros
+            1. `q{Register}` *
+            2. (command composition)
+            3. `q`
+
+            <small>* A register can be any letter, number or symbol. Register are a huge thing in vim. Right now, see it as clipboard manager.</small>
+            ---
+            ### Play Macros
+            # `@{Register}`
+            ---
+            class: middle, center
+            <video controls loop src="movies/macro.webm"></video>
+            .figcaption[Saving a macro in register `r`, play it with `@r`, repeat with `@@`]
+            ---
+            class: middle, center, cover, bg-head-white
+            background-image: url(images/urkel.gif)
+
+            # But ... I have an IDE!  Why on earth should I use this?
+            ---
+            class: middle, center
+
+            # Plugin-a-palooza
+            ---
+            ### Plugin Manager
+            * Basically you don't need a plugin manager.
+            * Just drop any plugin into your `.vim/plugin/` folder.
+            * Plugin managers have the advantage of easy installation, update and configuration.
+
+            --
+            * **Recommendations:**
+            * [Vim-Plug](https://github.com/junegunn/vim-plug), [Vundle](https://github.com/VundleVim/Vundle.vim) or [Pathogen](https://github.com/tpope/vim-pathogen)
+            * You can find many vim plugins at [VimAwesome.com](http://vimawesome.com)
+
+            ---
+            .image-centered[![](images/vim-plug.gif)]
+            .figcaption[Example installation with vim-plug. Type `:plugInstall` <br>Gif Source: https://github.com/junegunn/vim-plug]
+
+            ---
+            class: middle, center
+
+            # File Navigaton
+            ---
+            class: middle, center
+
+            # NERDtree
+
+            ---
+            .image-centered[![](images/nerdtree.gif)]
+
+            .figcaption[https://github.com/scrooloose/nerdtree]
+
+            ---
+            ### NERDTree
+            * Sidedrawer style
+            * Beginner friendly
+            * Similar to *Sublime Text*, *Atom*, *Visual Studio Code* etc
+            * https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3
+
+            ---
+            class: middle, center
+
+            # netrw
+            ## the built-in solution
+            ---
+            .image-centered[![](images/netrw.png)]
+
+            ---
+            ### netrw
+            * In VIM there are many ways for file navigation <br>e.g. the native netrw `:Explore`
+            * SSH support
+            * Unintuitive for beginners
+            * Buggy
+            * Vim-Vinegar: https://github.com/tpope/vim-vinegar
+            ---
+            class: middle, center
+
+            # Syntastic
+            ## https://github.com/scrooloose/syntastic
+
+            ???
+            code linter
+
+            ---
+            .image-centered[![Quelle:https://github.com/scrooloose/syntastic](images/syntastic.png)]
+            .figcaption[Additional read: http://usevim.com/2016/03/07/linting/]
+
+            ---
+            class: middle, center
+            # Gundo
+            ## Undo Management
+            ## https://github.com/sjl/gundo.vim
+
+            ---
+            ### Gundo
+            * Vim has a built-in `:earlier` command.
+            * e.g. `:earlier 5min` / `:earlier 24h`
+            * Gundo is a graphical interface for `:earlier`
+
+            ---
+            class: middle, center
+
+            <video controls loop src="movies/gundo.webm"></video>
+            .figcaption[Starting Gundo with `:GundoToggle`]
+
+            ---
+            class: middle, center
+            # Goyo
+            ## Distraction-free writing
+
+            ---
+            class: middle, center
+            <video controls loop src="movies/goyo.webm"></video>
+            .figcaption[Loving iA Writer? Type `:Goyo`. Stay focused. <br>https://github.com/junegunn/goyo.vim]
+
+            ---
+            class: middle, center
+
+            # Vim Fugitive
+            ## A git wrapper for vim
+            ---
+            ### Vim Fugitive
+            * https://github.com/tpope/vim-fugitive
+            * Powerful git wrapper
+            * Add / remove files within vim
+            * `:Gstatus` - Show status, add / remove files with `-`
+            * `:Gdiff` - Diff Viewer
+            * `:Gcommit` - I guess you can imagine
+            * Many many more
+
+            ---
+            class: middle, center
+            <video controls src="movies/fugitive.webm"></video>
+
+            ---
+            class: middle, center
+            .image-centered[![](images/gitblame.png)]
+            .figcaption[`:Gblame`]
+
+            ---
+            class: middle, center
+
+            # Tmux
+            ---
+            class: middle, center
+            .image-centered[![](images/tmux-logo.png)]
+            ---
+            ### Tmux
+            * **T**erminal**mu**ltiple**x**er
+            * Allows to run several programms and scripts in one terminal window
+            * Quickly change working enviroments and projects
+            * Split sessions in *windows* and *panes*
+            * https://tmux.github.io/
+            ---
+            class: middle, center
+
+            # Default prefix: `CTRL-B`
+            ---
+            class: middle, center
+
+            # Better prefix: `CTRL-A`
+            ## in your tmux.conf: `set-option -g prefix C-a`
+            ---
+            class: middle, center
+
+            .image-centered[![](images/ctrllock.png)]
+            ---
+            class: middle, center
+
+            # New session
+            ## `tmux new -s <projectname>`
+            ---
+            .image-centered[![New Tmux session](images/tmux1.png)]
+            ---
+            class: middle, center
+
+            # Split window horizontal
+            ## `<prefix> "`
+            ---
+            .image-centered[![](images/tmux-split.png)]
+            ---
+            class: middle, center
+
+            # Split window vertical
+            ## `<prefix> %`
+            ---
+            .image-centered[![](images/tmux-split2.png)]
+            ---
+            .image-centered[![](images/tmux-split3.png)]
+            ---
+            .image-centered[![](images/tmux-layout1.png)]
+            ---
+            .image-centered[![](images/tmux-layout2.png)]
+            ---
+            .image-centered[![](images/tmux-layout3.png)]
+            ---
+            class: middle, center
+
+            # Switch between sessions
+            ## `<prefix> s`
+            ---
+            class: middle, center
+
+            # Detach tmux ...
+            ## `<prefix> d`
+            ---
+            class: middle, center
+
+            # ... and attach it again
+            ## `tmux a`
+            ---
+            class: middle, center
+
+            # Vim + Tmux = Awesome
+            ---
+            class: middle, center
+
+            # There are so many possibilities.
+            ## I could talk for hours.
+            ---
+            background-image: url(images/borinmg.gif)
+            class: cover
+            ---
+            class: middle, center
+
+            # ... but I won't
+            ---
+            class: middle, center
+
+            # FZF
+            ## https://github.com/junegunn/fz
+            ---
+            .image-centered[![](images/fzf.gif)]
+            ---
+            ### FZF
+            * Fuzzy search is awesome
+            * Alfred, Spotlight, Sublime Text, etc
+            * There are a lot of good solutions for a vim fuzzy search <br>e.g.: Unite or CTRL-P
+            * Requires a lot of configuration
+            * Can be very slow (depends on project size)
+            ---
+            class: middle, center
+
+            # FZF is blazingly fast
+            ---
+            ### FZF & VIM
+            * You can configure fzf with your own shortcuts
+            * Or just use the fzf.vim wrapper
+            * https://github.com/junegunn/fzf.vim
+            ---
+            class: middle, center
+
+            # `:Files`
+            ---
+            class: middle, center
+
+            # `:Buffers`
+            ---
+            class: middle, center
+
+            # `:Commits`
+            ---
+            class: middle, center
+
+            # `:Ag`
+            ---
+            class: middle, center
+
+            # `:History`
+
+            ---
+            ### Commands
+            * `:Files` - Search in all project files
+            * `:GitFiles` - Similar, but respects *.gitignore*
+            * `:Buffers` - Search in all open buffers
+            * `:Commits` - Search in all commits
+            * `:BCommits` - Search in all commits of a buffer
+            * `:History` - Search in recent files
+            * `:History:` - Search in recent commands
+            * `:History/` - Search in recent file searches
+            * `:Ag` - Search a pattern in project <br> (*Ag* is a very fast *grep* alternative)
+            * `:Colors` - Search and switch a color scheme
+            * And more: https://github.com/junegunn/fzf.vim#commands
+
+            ---
+            class: middle, center
+
+            # Dotfiles
+            ---
+            ### Dotfiles
+            * Make your own *.vimrc*, *.tmux.conf*, etc
+            * Steal configuration from other people
+            * Share!
+            * https://github.com/heroheman/dotfiles
+
+            ???
+            understand what it does
+            ---
+            class: middle, center
+
+            # Questions?
+
+        </textarea>
+        <script src="remark.js/remark-latest.min.js"></script>
+        <script>
+            var slideshow = remark.create({
+                ratio: '16:9',
+                count: false,
+                slideNumberFormat: '',
+                countIncrementalSlides: false
+            });
+        </script>
+        <script src="remark.js/jquery-2.2.1.min.js"></script>
+        <script src="remark.js/addons.js"></script>
+    </body>
+</html>
