@@ -209,7 +209,7 @@ body {
 
 .cover {
     background-size: cover !important;
-    background-position: center;
+    background-position: center !important;
 }
 
 img.badge {
