@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atomic Design</title>
+        <meta charset="utf-8">
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+            @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+            @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+        </style>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <textarea id="source">
+
+            class: middle, center
+            # Atomic Design & Patternlab
+            ---
+            class: middle, center
+            # Atomic Design
+            ---
+            .image-centered[![Atomic Design](images/atomic/tellerrand-dantz.png)]
+            --
+            .figcaption[[Atomic Design, Brad Frost, Beyond Tellerrand 2013](http://vimeo.com/67476280)]
+            ---
+            .image-centered[![Atomic Design](images/atomic/htmlelements2.png)]
+            ---
+            .image-centered[![Atomic Design](images/atomic/elements.png)]
+            ---
+            .image-centered[![Atomic Design](images/atomic/htmlelements.png)]
+            ---
+            .image-centered[![Atomic Design](images/atomic/atomic.png)]
+            ---
+            .image-centered[![Atomic Design](images/atomic/atome.png)]
+            .figcaption[Bespielatome: Einfache HTML Elemente]
+            ---
+            ## Beispiel: Atome
+            ```html
+            <a href="#">Link</a>
+            <p>Lorem delectus elit facer voluptatem amet consequuntur.</p>
+            <span>lorem ipsum</span>
+            <strong>Bold ipsum</strong>
+            ```
+            ---
+            ## Beispiel: Molekuel
+            ```html
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            ```
+            ---
+            ## Beispiel: Organismen
+            ```html
+            <header>
+                <h1>Seitentitel</h1>
+                <h2>Unterueberschrift</h2>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </nav>
+            </header>
+            ```
+
+            ---
+
+            class: middle, center
+            # Atomic Design mit Patternlab
+
+            ---
+            ## Patternlab
+
+            * Patternlab ist ein Living Styleguide Generator
+            * Templatesprache ist Mustache
+            * Responsive Tester
+            * Codeview
+            * Vererbung
+            * Statusmanagement
+            * Annotation
+            ---
+            ## Patternlab: Beispiel
+            `index.html`
+            ```html
+            <div class="container">
+                <header>
+                    <img src="logo.jpg" alt="Mein tolles Logo">
+                    <nav>
+                        <ul>
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="content">
+                    <h2>Überschrift</h2>
+                    <div>Hier steht Content. Mit vielen Untermodulen</div>
+                </div>
+                <footer>
+                    <p>© 2013 — Beispiel AG</p>
+                </footer>
+            </div>
+            ```
+            <br>
+            
+            ---
+            ## Patternlab: Atom
+
+            `link.html`
+            ```html
+            <a href="#">linktext</a>
+            ```
+
+            --
+            `_patterns/atoms/01-links/00-link.mustache`
+            ```html
+            <a href="{{link.url}}">{{link.text}}</a>
+            ```
+
+            --
+
+            `_data.json` / `link.json`
+            ```json
+            "link": {
+                "url": "#",
+                "text": "linktext"
+            }
+            ```
+
+            Content wird mit *json* gepflegt. Es gibt eine globale *_data.json*, die immer ausgelesen wird. Wird im selben Ordner eine *json* Datei mit selbem Namen wie die jeweilige *mustache* Datei angelegt, wird dieser Inhalt eingepflegt. 
+            *Diese vererbt sich allerdings nicht.*
+
+            ---
+            ## Patternlab: Molekuele
+
+            `_patterns/molecules/01-navigation/00-navigation.mustache`
+            ```html
+            <nav>
+                <ul>
+                    <li>{{> atoms-link }}</li>
+                    <li>{{> atoms-link }}</li>
+                    <li>{{> atoms-link(link.url:"google.de", link.text:"Ein anderer Text") }}</li>
+                </ul>
+            </nav>
+            ```
+
+            * Molekuele sind zusammengefasste HTML Elemente
+            * z.B. eine Navigation, Teaser, etc
+            * Die Einbindung erfolgt mit `{{> typ-dateiname}}`. 
+            * JSON Elemente koennen als Parameter mitgegeben werden.
+
+            ---
+            ## Patternlab: Organismen
+
+            `_patterns/organisms/01-global/00-header.mustache`
+            ```html
+            <header>
+                {{> molecules-logo}}
+                {{> molecules-navigation}}
+            </header>
+            ```
+
+            * Organismen sind zusammengefasste Seitenbereiche
+            * z.B Header, Footer, Artikeltext
+            ---
+            ## Patternlab: Templates
+
+            `_patterns/templates/01-home/00-homepage.mustache`
+            ```html
+            <div class="container">
+                {{> organisms-header}}
+                <div class="content">
+                    {{> molecules-heroimage}}
+                    {{> atoms-headline}}
+                    {{> molecules-paragraph}}
+                    {{> organisms-carousel}}
+                    {{> organisms-teaserwall}}
+                    {{> molecules-cta}}
+                </div>
+                {{> organisms-footer}}
+            </div>
+            ```
+
+            * Templates sind Seitentypen, zusammengesteckt mit den jeweiligen Modulen
+            ---
+            ## Patternlab: Pages
+
+            `_patterns/pages/01-home/00-homepage.mustache`
+            ```html
+            {{> templates-homepage}}
+            ```
+            --
+
+            `_patterns/pages/01-home/00-homepage.json`
+            ```json
+            {
+                [...]
+                "logo": "../images/mylogo",
+                "headline" : {
+                    "content" : "mein content"
+                }
+                [...]
+            }
+            ```
+
+            * vorhandene Templates werden mithilfe einer JSON Datei komplett ueberschrieben
+
+
+
+
+        </textarea>
+        <script src="remark.js/remark-latest.min.js"></script>
+        <script>
+            var slideshow = remark.create({
+                ratio: '16:9',
+                count: false,
+                slideNumberFormat: '',
+                countIncrementalSlides: false
+            });
+        </script>
+        <script src="remark.js/jquery-2.2.1.min.js"></script>
+        <script src="remark.js/addons.js"></script>
+    </body>
+</html>
